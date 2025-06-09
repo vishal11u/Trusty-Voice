@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TrustScribe - Testimonial Collection Platform
+
+TrustScribe is a modern SaaS platform that helps businesses collect and display customer testimonials through customizable widgets and chatbot integration.
+
+## Features
+
+- 🎨 Customizable testimonial widgets
+- 🤖 AI-powered feedback collection chatbot
+- 📊 Analytics dashboard
+- 💳 Subscription-based pricing
+- 🔒 Secure authentication with Clerk
+- 🎯 Easy embedding on any website
+- 🌙 Dark mode support
+
+## Tech Stack
+
+- **Frontend**: Next.js 14 with TypeScript
+- **Database**: Supabase
+- **Authentication**: Clerk
+- **Payments**: Stripe
+- **Styling**: TailwindCSS
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18+ and npm
+- Supabase account
+- Clerk account
+- Stripe account
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/trustscribe.git
+   cd trustscribe
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. Create a `.env.local` file in the root directory and add the following variables:
+   ```
+   # Supabase
+   NEXT_PUBLIC_SUPABASE_URL=your-project-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 
-To learn more about Next.js, take a look at the following resources:
+   # Clerk
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-publishable-key
+   CLERK_SECRET_KEY=your-secret-key
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   # Stripe
+   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your-publishable-key
+   STRIPE_SECRET_KEY=your-secret-key
+   STRIPE_WEBHOOK_SECRET=your-webhook-secret
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   # App
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   ```
 
-## Deploy on Vercel
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Database Schema
+
+The application uses Supabase with the following main tables:
+
+- `users` - User profiles
+- `testimonials` - Customer testimonials
+- `widgets` - Widget configurations
+- `chatbot_flows` - Chatbot conversation flows
+- `subscriptions` - User subscription data
+
+## Deployment
+
+The application is designed to be deployed on Vercel. Follow these steps:
+
+1. Push your code to a GitHub repository
+2. Create a new project on Vercel
+3. Connect your GitHub repository
+4. Add all environment variables
+5. Deploy!
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
