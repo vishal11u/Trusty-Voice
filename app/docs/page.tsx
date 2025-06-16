@@ -72,7 +72,7 @@ export default function DocsPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-24">
       <div className="mb-12 text-center">
         <h1 className="text-4xl font-bold">Documentation</h1>
         <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">

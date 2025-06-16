@@ -41,6 +41,7 @@ import {
   AnimatePresence,
   useSpring,
 } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 type BackgroundElement = {
   type: "testimonial" | "quick" | "stat";
@@ -155,6 +156,7 @@ const FloatingCard = ({
 export default function Home() {
   const { isSignedIn, isLoaded } = useUser();
   const { scrollY } = useScroll();
+  const router = useRouter();
   const opacity = useTransform(scrollY, [0, 200], [1, 0]);
   const scale = useTransform(scrollY, [0, 200], [1, 0.8]);
 
@@ -836,8 +838,8 @@ export default function Home() {
                 ],
               },
               {
-                name: "Pro",
-                price: "$29",
+                name: "Starter",
+                price: "INR 499",
                 features: [
                   "Unlimited testimonials",
                   "Advanced widgets",
@@ -849,8 +851,8 @@ export default function Home() {
                 ],
               },
               {
-                name: "Enterprise",
-                price: "Custom",
+                name: "Professional",
+                price: "INR 999",
                 features: [
                   "Everything in Pro",
                   "Dedicated support",
@@ -911,6 +913,7 @@ export default function Home() {
                 </ul>
                 <div className="mt-8">
                   <Button
+                    onClick={() => router.push("/pricing")}
                     className={`w-full ${
                       index === 1
                         ? "bg-white text-blue-600 hover:bg-gray-100"

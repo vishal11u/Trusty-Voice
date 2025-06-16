@@ -45,10 +45,6 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to send message");
-      }
-
       toast.success("Message sent successfully!");
       setFormData({
         name: "",
@@ -196,7 +192,7 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col"
+        className="bg-white dark:bg-gray-900 border-2 rounded-lg shadow-lg p-6 flex flex-col"
       >
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
           Chat with AI

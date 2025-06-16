@@ -6,6 +6,8 @@ import ProgressBar from "@/components/ProgressBar";
 import { ClerkProvider } from "@clerk/nextjs";
 import MainLayout from "@/components/layouts/MainLayout";
 import Chatbot from "@/components/chatbot/Chatbot";
+import { Toaster } from "sonner";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -35,6 +37,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <ProgressBar />
+            <Toaster richColors position="top-right" duration={2000} />
             <MainLayout>{children}</MainLayout>
             <Chatbot />
           </ThemeProvider>

@@ -28,7 +28,7 @@ type PricingTier = {
 const pricingTiers: PricingTier[] = [
   {
     name: "Starter",
-    price: "$29",
+    price: "INR 499",
     description: "Perfect for small teams getting started",
     features: [
       "Up to 5 team members",
@@ -43,7 +43,7 @@ const pricingTiers: PricingTier[] = [
   },
   {
     name: "Professional",
-    price: "$99",
+    price: "INR 999",
     description: "For growing businesses",
     features: [
       "Up to 20 team members",
@@ -139,11 +139,9 @@ export default function PricingPage() {
   };
 
   const handleContactSales = () => {
-    window.location.href =
-      "mailto:sales@trustscribe.com?subject=Enterprise Plan Inquiry";
+    router.push("/contact");
   };
 
-  // Animation variants for staggered animations
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
